@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <title>Web Color Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav>
+            <input type="color" id="color-picker" value="#F55A5A"/>
+            <select id="color-choices" name="color-choices">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome Dark</option>
+                <option value="monochrome-light">Monochrome Light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-Complement</option>
+                <option value="triad">Triad</option>     
+            </select>
+            <button id="color-btn">Get Color Scheme</button>
+        </nav>
+        <main> 
+        <div id="main-display">
+        </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
