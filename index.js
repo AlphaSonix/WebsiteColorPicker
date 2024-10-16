@@ -1,5 +1,5 @@
-colorSelect = document.getElementById("color-picker")
-choiceSelect = document.getElementById('color-choices')
+const colorSelect = document.getElementById("color-picker")
+const choiceSelect = document.getElementById('color-choices')
 let colorHex = 'F55A5A'
 let colorType = 'monochrome'
 let colorArray = []
@@ -11,6 +11,20 @@ colorSelect.addEventListener("change", function(){
 choiceSelect.addEventListener("change", function(){
     colorType = choiceSelect.value
 })
+
+document.body.addEventListener("click", (e) => {
+    const targetColor = e.target.dataset.color
+    copyToClipboard(targetColor)
+})
+
+function copyToClipboard(targetColor) {
+    colorArray.forEach((color)=> {
+        if (targetColor === color) {
+            navigator.clipboard.writeText(color)
+            alert(`Copied the hex: ${color}`)
+        }
+    })
+}
 
 document.getElementById('color-btn').addEventListener("click", function(){
     colorArray = []
@@ -27,10 +41,9 @@ document.getElementById('color-btn').addEventListener("click", function(){
 function render() {
     let colorDisplay = ''
     colorArray.forEach(function(color){
-        console.log(color)
          colorDisplay += `
             <div class="main-display"> 
-                <div class="color-display" style="background:${color}"></div>
+                <div class="color-display" style="background:${color}" data-color=${color}></div>
                 <h2>${color}</h2>
             </div>
     `

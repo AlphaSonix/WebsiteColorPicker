@@ -45,3 +45,8 @@ input[type=color] {
 .main-display:hover {
     border: 2px solid aqua;
 }
+
+.main-bg {
+    background: #575252;
+    height: 100vh;
+}
